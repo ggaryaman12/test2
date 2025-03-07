@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
 const path = require('path');
 
@@ -39,7 +40,9 @@ app.post('/submit-plan', (req, res) => {
   res.json({ message: 'Response received! Email will be sent via frontend.' });
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+// // Start the server
+// app.listen(port, () => {
+//   console.log(`Server is running on http://localhost:${port}`);
+// });
+
+module.exports.handler = serverless(app);
