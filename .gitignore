@@ -9,7 +9,6 @@ yarn-error.log*
 
 # Build output
 .vercel/
-public/
 
 # Environment variables
 .env
